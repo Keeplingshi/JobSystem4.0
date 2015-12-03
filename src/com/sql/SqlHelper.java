@@ -1,5 +1,5 @@
 /*
- * Êı¾İ¿â²Ù×÷
+ * æ•°æ®åº“æ“ä½œ
  */
 
 package com.sql;
@@ -10,25 +10,16 @@ import javax.swing.JOptionPane;
 
 public class SqlHelper {
 
-	//¶¨ÒåËùÓĞÊı¾İ¿â²Ù×÷ĞèÒªµÄ¹¤¾ß
+	//å®šä¹‰æ‰€æœ‰æ•°æ®åº“æ“ä½œéœ€è¦çš„å·¥å…·
 	Connection ct=null;
 	PreparedStatement ps=null;
 	ResultSet rs=null;
 	
-	//¶¨ÒåÊı¾İ¿âĞÅÏ¢
-//	String driver="com.mysql.jdbc.Driver";	//Êı¾İ¿âÇı¶¯¡£
-//	String url="jdbc:mysql://219.219.60.248:3306/JobSystem?user=root&password=root";
-	
-//	String driver="com.mysql.jdbc.Driver";	//Êı¾İ¿âÇı¶¯¡£
-//	String url="jdbc:mysql://202.119.206.153:3306/JobSystem?user=root&password=root";
-	
-//	String driver="com.mysql.jdbc.Driver";	//Êı¾İ¿âÇı¶¯¡£
-//	String url="jdbc:mysql://csxg.cumt.edu.cn:3306/JobSystem?user=root&password=root";
-	
-	String driver="com.mysql.jdbc.Driver";	//Êı¾İ¿âÇı¶¯¡£
+	//å®šä¹‰æ•°æ®åº“ä¿¡æ¯
+	String driver="com.mysql.jdbc.Driver";	//æ•°æ®åº“é©±åŠ¨ã€‚
 	String url="jdbc:mysql://localhost:3306/JobSystem?user=root&password=123456";
 	
-	//¼ÓÔØÇı¶¯
+	//åŠ è½½é©±åŠ¨
 	public void Driver()
 	{
 		try {
@@ -36,13 +27,13 @@ public class SqlHelper {
 			ct=DriverManager.getConnection(url);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			JOptionPane.showMessageDialog(null, "Êı¾İ¿âÎŞ·¨Á¬½Ó");
+			JOptionPane.showMessageDialog(null, "æ•°æ®åº“æ— æ³•è¿æ¥");
 			e.printStackTrace();
 			System.exit(0);
 		}
 	}
 	
-	//¹Ø±Õ
+	//å…³é—­
 	public void close()
 	{
 		try {
@@ -68,7 +59,7 @@ public class SqlHelper {
 		return rs;
 	}
 	
-	//²éÑ¯
+	//æŸ¥è¯¢
 	public ResultSet Query(String sql,String []paras)
 	{
 		this.Driver();
@@ -100,7 +91,7 @@ public class SqlHelper {
 		return b;
 	}
 	
-	//ÔöÉ¾¸Ä(¸üĞÂ)
+	//å¢åˆ æ”¹(æ›´æ–°)
 	public boolean Update(String sql,String []paras)
 	{
 		this.Driver();
